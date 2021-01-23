@@ -8,7 +8,8 @@
       <th>Date</th>
       <th>Place</th>
       <th>Participants</th>
-      <th>References</th>
+      <th>Group</th>
+      <th>Duration</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
         <td><%= concert.place %></td>
         <td><%= concert.participants %></td>
         <td><%= concert.group.name %></td>
+        <td><%= concert.duration %></td>
         <td><%= link_to 'Show', concert %></td>
         <td><%= link_to 'Edit', edit_concert_path(concert) %></td>
         <td><%= link_to 'Destroy', concert, method: :delete, data: { confirm: 'Are you sure?' } %></td>

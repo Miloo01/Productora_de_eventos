@@ -31,6 +31,11 @@
     <%= form.select :group_id, options_from_collection_for_select(@groups, :id, :name) %>
   </div> 
 
+  <div class="field">
+    <%= form.label :duration, "minute" %> 
+    <%= form.number_field :duration %>
+  </div>
+
   
 
   <div class="actions">

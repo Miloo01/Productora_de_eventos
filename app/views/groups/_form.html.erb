@@ -16,12 +16,14 @@
     <%= form.text_field :name %>
   </div>
 
-   <div class="field">
+  <div class="field">
     <%= form.label :gender %>
     <%= form.select :gender, Group.genders.keys %>
-    </div> 
+  </div> 
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+<%= link_to 'Crews', new_crew_path %>

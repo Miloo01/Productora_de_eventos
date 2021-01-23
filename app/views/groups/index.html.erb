@@ -9,8 +9,9 @@
       <th>Gender</th>
       <th>Concerts</th>
       <th>Cantidad de espectadores</th>
-      <th>Integrantes</th>
+      <th>Cantidad de integrantes</th>
       <th>Fecha debut</th>
+      <th>Integrantes</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,9 +22,20 @@
         <td><%= group.name %></td>
         <td><%= group.gender %></td>
         <td><%= group.qconcerts %></td>
-        <td><%= group.qcrews %></td>
         <td><%= group.qparticipants %></td>
+        <td><%= group.qcrews %></td>
         <td><%= group.qdebut %></td>
+        <td>
+          <% group.crews.each do |p| %>  
+            <ul>
+              <li>
+                <%= p.name %>
+              </li>
+            </ul>
+            
+          <%end%>
+
+        </td>
         <td><%= link_to 'Show', group %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
         <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>

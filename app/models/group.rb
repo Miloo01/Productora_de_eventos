@@ -31,14 +31,34 @@ class Group < ApplicationRecord
 
     def qmonth
         if self.concerts.count > 0
-            self.concerts.where('extract(month from date) = ?', Time.now.month).count 
+
+            # g = self.concerts.where('extract(year from date) = ?', Time.now.year) 
+            # g.where('extract(month from date) = ?', Time.now.month).count 
+            # concerts.where('extract(year from date) = ?', Time.now.year) 
+
+            self.concerts.where('extract(year from date) = ?', Time.now.year).where('extract(month from date) = ?', Time.now.month).count 
         else 
             return 0  
         end
 
-    end  # agregar año 
+    end  
 
+    def last_concert
+        if self.concerts.count > 0
+            self.concerts.order(date: :asc).last.date
+        else
+            "no debut"
+        end
 
+    end
+
+    def qmaxparticipants
+        self.concerts.pluck(:participants).max
+    end
+
+    def qmaxduration
+        self.concerts.pluck(:duration).max
+    end
 
 
 

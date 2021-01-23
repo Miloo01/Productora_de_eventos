@@ -15,6 +15,26 @@
   <%= @group.qmonth %>
 </p>
 
+<p>
+  <strong>Ultimo concierto </strong>
+  <% if @group.last_concert != "no debut" %>
+
+  <%= @group.last_concert.strftime("%Y-%B-%A") %>
+    
+  <% end %>
+</p>
+
+<p>
+  <strong>Maximo de participantes </strong>
+  <%= @group.qmaxparticipants %>
+    
+</p>
+
+<p>
+  <strong>Duración maxima </strong>
+  <%= @group.qmaxduration %>
+</p>
+
 <!-- <p>
   <strong>Ultimo concierto</strong>
   <%=  %>

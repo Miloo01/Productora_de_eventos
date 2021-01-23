@@ -3,4 +3,6 @@ class Concert < ApplicationRecord
     validates :date, :place, :participants,  presence: true
 
 
+    
+
 end
